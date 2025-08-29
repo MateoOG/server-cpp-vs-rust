@@ -1,0 +1,84 @@
+PROJECT_NAME           = "Task Processing System"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "Task processing system with REST API"
+
+OUTPUT_DIRECTORY       = docs/
+INPUT                  = src/
+RECURSIVE              = YES
+FILE_PATTERNS          = *.cpp *.h
+EXCLUDE_PATTERNS       = */build/* */tests/* */httplib.h
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+HAVE_DOT               = YES
+DOT_GRAPH_MAX_NODES    = 100
+UML_LOOK               = YES
+CLASS_DIAGRAMS         = YES
+COLLABORATION_GRAPH    = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+VERBATIM_HEADERS       = YES
+
+JAVADOC_AUTOBRIEF      = YES
+MULTILINE_CPP_IS_BRIEF = YES
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+SEARCH_INCLUDES        = YES
+
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# Custom documentation sections
+ALIASES += "api{1}=\par API Endpoint:\n\1\n"
+ALIASES += "workflow{1}=\par Workflow:\n\1\n"
+ALIASES += "limitation{1}=\par Limitation:\n\1\n"
+
+# Additional settings for better documentation
+FULL_PATH_NAMES        = NO
+STRIP_FROM_PATH        = src/
+SHORT_NAMES            = NO
+
+# Include README and other markdown files
+FILE_PATTERNS         += *.md
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Group related functionality
+DISTRIBUTE_GROUP_DOC   = YES
+
+# Enhanced output
+HTML_HEADER            = 
+HTML_FOOTER            = 
+HTML_STYLESHEET        = 
+HTML_EXTRA_STYLESHEET  = 
+HTML_EXTRA_FILES       = 
+
+# Search functionality
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO
+
+# Mathematical formulas
+USE_MATHJAX            = YES
+MATHJAX_RELPATH        = https://cdn.jsdelivr.net/npm/mathjax@2
+
+# Performance
+NUM_PROC_THREADS       = 0
+
+# Version control integration
+STRIP_CODE_COMMENTS    = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES

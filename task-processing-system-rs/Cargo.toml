@@ -1,0 +1,94 @@
+[package]
+name = "task-processing-system-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Task Processing System Team"]
+description = "High-performance, distribution task processing system with REST API"
+license = "MIT"
+repository = "https://github.com/your-org/task-processing-system"
+keywords = ["task", "processing", "distributed", "rest-api", "concurrent"]
+categories = ["web-programming", "concurrency", "api-bindings"]
+
+# Optimization profiles
+[profile.dev]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[profile.test]
+opt-level = 1
+
+# Dependencies
+[dependencies]
+# HTTP Server
+warp = "0.3"
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID generation
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Configuration
+config = "0.14"
+
+# Collections and utilities
+dashmap = "5.0"  # Concurrent HashMap
+parking_lot = "0.12"  # Faster mutexes than std
+
+# CLI for main binary
+clap = { version = "4.0", features = ["derive"] }
+
+# Future utilities for examples
+futures = "0.3"
+
+# Testing utilities
+[dev-dependencies]
+tokio-test = "0.4"
+reqwest = { version = "0.12", features = ["json"] }
+tracing-test = "0.2"
+
+# Benchmarking
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bin]]
+name = "task-processor"
+path = "src/main.rs"
+
+[[bench]]
+name = "task_benchmarks"
+harness = false
+
+# Example binaries for testing
+[[example]]
+name = "client_example"
+path = "examples/client_example.rs"
+
+[[example]]
+name = "load_test"
+path = "examples/load_test.rs"
+
+# Features for conditional compilation
+[features]
+default = ["metrics"]
+metrics = []
+tracing-detailed = ["tracing/max_level_trace"]

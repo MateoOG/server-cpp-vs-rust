@@ -1,0 +1,36 @@
+# Task Processing System Configuration
+
+# Number of worker nodes (1-50)
+num_workers = 3
+
+# Number of processing threads per worker (1-32)
+threads_per_worker = 4
+
+# Orchestrator API port
+orchestrator_port = 7000
+
+# Logging configuration
+log_level = "info"  # Options: error, warn, info, debug, trace
+
+# Example configurations for different scenarios:
+
+# Development/Testing (lightweight)
+# num_workers = 2
+# threads_per_worker = 2
+# base_port = 9000
+# orchestrator_port = 9999
+# log_level = "debug"
+
+# Production (high throughput)
+# num_workers = 8
+# threads_per_worker = 8
+# base_port = 8080
+# orchestrator_port = 7000
+# log_level = "warn"
+
+# Single machine testing
+# num_workers = 1
+# threads_per_worker = 1
+# base_port = 8080
+# orchestrator_port = 7000
+# log_level = "trace"

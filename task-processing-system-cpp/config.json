@@ -1,0 +1,5 @@
+{
+  "num_workers": 3,
+  "threads_per_worker": 4,
+  "orchestrator_port": 5000
+}
