@@ -268,7 +268,7 @@ async fn test_concurrent_task_processing() {
                     "operation": match i % 3 {
                         0 => "factorial",
                         1 => "fibonacci", 
-                        _ => "primecheck"
+                        _ => "prime_check"
                     }
                 }
             });

@@ -61,10 +61,12 @@ impl Default for TaskStatus {
 
 /// Mathematical operations supported by the system
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-#[serde(rename_all = "lowercase")]
 pub enum Operation {
+    #[serde(rename = "factorial")]
     Factorial,
+    #[serde(rename = "fibonacci")]
     Fibonacci,
+    #[serde(rename = "prime_check")]
     PrimeCheck,
 }
 
