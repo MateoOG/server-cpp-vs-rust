@@ -62,7 +62,6 @@ cargo test
 
 # Run integration tests
 cargo test --test integration_test
-#FIXME: check this commands for testin and update the .sh final if needed.
 
 # Run all tests with output
 cargo test -- --nocapture

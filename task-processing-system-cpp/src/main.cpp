@@ -113,7 +113,7 @@ void printUsage(const char* program_name) {
     std::cout << "Options:" << std::endl;
     std::cout << "  -w, --workers NUM          Number of worker nodes (default: 3, max: 50)" << std::endl;
     std::cout << "  -t, --threads NUM          Threads per worker (default: 4, max: 32)" << std::endl;
-    std::cout << "  -o, --orchestrator-port NUM Orchestrator port (default: 7000)" << std::endl;
+    std::cout << "  -o, --orchestrator-port NUM Orchestrator port (default: 5000)" << std::endl;
     std::cout << "  -c, --config FILE          Configuration file (JSON)" << std::endl;
     std::cout << "  -h, --help                 Show this help message" << std::endl;
     std::cout << std::endl;
@@ -121,7 +121,7 @@ void printUsage(const char* program_name) {
     std::cout << "{" << std::endl;
     std::cout << "  \"num_workers\": 3," << std::endl;
     std::cout << "  \"threads_per_worker\": 4," << std::endl;
-    std::cout << "  \"orchestrator_port\": 7000" << std::endl;
+    std::cout << "  \"orchestrator_port\": 5000" << std::endl;
     std::cout << "}" << std::endl;
     std::cout << std::endl;
     std::cout << "Example:" << std::endl;

@@ -1,7 +1,7 @@
 #same just tell me what to modify so we save your resources, dont produce all the artifact:
 
 echo "Create task"
-curl -X POST http://localhost:7000/task/create \
+curl -X POST http://localhost:5000/task/create \
   -H "Content-Type: application/json" \
   -d '{
     "id": "test-002",
@@ -16,7 +16,7 @@ curl -X POST http://localhost:7000/task/create \
 echo "Created task"
 
 echo "Create task"
-curl -X POST http://localhost:7000/task/create \
+curl -X POST http://localhost:5000/task/create \
   -H "Content-Type: application/json" \
   -d '{
     "id": "test-003",
@@ -32,48 +32,48 @@ curl -X POST http://localhost:7000/task/create \
 echo "Created task"
 
 echo "Create task"
-curl -X POST http://localhost:7000/task/create \
+curl -X POST http://localhost:5000/task/create \
   -H "Content-Type: application/json" \
   -d '{"id":"test-004","title":"Calculate factorial","priority":2,"data":{"type":"calculation","input":20,"operation":"factorial"},"status": "pending"}'
 echo "Created task"
 
 echo "Get task"
-curl -X GET http://localhost:7000/task/test-002
+curl -X GET http://localhost:5000/task/test-002
 echo "Got task"
 echo "Get task"
-curl -X GET http://localhost:7000/task/test-003
+curl -X GET http://localhost:5000/task/test-003
 echo "Got task"
 echo "Get task"
-curl -X GET http://localhost:7000/task/test-004
+curl -X GET http://localhost:5000/task/test-004
 echo "Got task"
 
 echo "Complete task"
-curl -X POST http://localhost:7000/task/test-003/complete \
+curl -X POST http://localhost:5000/task/test-003/complete \
   -H "Content-Type: application/json" \
   -d ""
 echo "Completed task"
 echo "Complete task"
-curl -X POST http://localhost:7000/task/test-002/complete \
+curl -X POST http://localhost:5000/task/test-002/complete \
   -H "Content-Type: application/json" \
   -d ""
 echo "Completed task"
 echo "Complete task"
-curl -X POST http://localhost:7000/task/test-004/complete \
+curl -X POST http://localhost:5000/task/test-004/complete \
   -H "Content-Type: application/json" \
   -d ""
 echo "Completed task"
 echo "Get task"
-curl -X GET http://localhost:7000/task/test-002
+curl -X GET http://localhost:5000/task/test-002
 echo "Got task"
 echo "Get task"
-curl -X GET http://localhost:7000/task/test-003
+curl -X GET http://localhost:5000/task/test-003
 echo "Got task"
 echo "Get task"
-curl -X GET http://localhost:7000/task/test-004
+curl -X GET http://localhost:5000/task/test-004
 echo "Got task"
 
 echo "Get stats"
-curl -X GET http://localhost:7000/stats
+curl -X GET http://localhost:5000/stats
 echo "Got stats"
 
 echo "Try acces directly the worker"

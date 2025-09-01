@@ -59,7 +59,7 @@ make perf-test         # Performance tests
 
 The system implements four endpoints:
 
-### Orchestrator API (`http://localhost:7000`)
+### Orchestrator API (`http://localhost:5000`)
 
 #### POST /task/create
 Create a new task.
@@ -169,7 +169,7 @@ Options:
   -w, --workers NUM          Number of workers (default: 3, max: 50)
   -t, --threads NUM          Threads per worker (default: 4, max: 32)  
   -p, --port NUM             Base port for workers (default: 8080)
-  -o, --orchestrator-port NUM Orchestrator port (default: 7000)
+  -o, --orchestrator-port NUM Orchestrator port (default: 5000)
   -c, --config FILE          Configuration file (JSON)
   -h, --help                 Show help message
 ```
@@ -180,7 +180,7 @@ Options:
 {
   "num_workers": 3,
   "threads_per_worker": 4,
-  "orchestrator_port": 7000,
+  "orchestrator_port": 5000,
 }
 ```
 
@@ -244,7 +244,7 @@ python3 tests/performance_test.py --priority-tasks 50
 ```
 ┌─────────────────┐    ┌─────────────────┐
 │   Orchestrator  │    │     Client      │
-│   Port: 7000    │◄──►│   Applications  │
+│   Port: 5000    │◄──►│   Applications  │
 └─────────────────┘    └─────────────────┘
          │
          │ Round-Robin
@@ -276,7 +276,7 @@ python3 tests/performance_test.py --priority-tasks 50
 
 ```bash
 # 1. Create a high-priority factorial task
-curl -X POST http://localhost:7000/task/create \
+curl -X POST http://localhost:5000/task/create \
   -H "Content-Type: application/json" \
   -d '{
     "id": "example-001", 
@@ -290,19 +290,19 @@ curl -X POST http://localhost:7000/task/create \
   }'
 
 # 2. Check task status (should be "processing" with result)
-curl http://localhost:7000/task/example-001
+curl http://localhost:5000/task/example-001
 
 # 3. Complete the task (REQUIRED step)  
-curl -X POST http://localhost:7000/task/example-001/complete
+curl -X POST http://localhost:5000/task/example-001/complete
 
 # 4. Verify completion
-curl http://localhost:7000/task/example-001
+curl http://localhost:5000/task/example-001
 ```
 
 ### Check System Statistics
 
 ```bash
-curl http://localhost:7000/stats
+curl http://localhost:5000/stats
 ```
 
 ## Development

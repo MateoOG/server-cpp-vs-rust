@@ -201,7 +201,7 @@ setup-dev: install-deps
 	@echo '{' > config.json
 	@echo '  "num_workers": 3,' >> config.json
 	@echo '  "threads_per_worker": 4,' >> config.json
-	@echo '  "orchestrator_port": 7000' >> config.json
+	@echo '  "orchestrator_port": 5000' >> config.json
 	@echo '}' >> config.json
 	@echo "Development environment ready!"
 
