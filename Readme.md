@@ -6,8 +6,8 @@ A comparative implementation of a multi-threaded task processing system with RES
 
 ### 1. Clone the repository:
 ```
-git clone git@github.com:MateoOG/etc-latam-project-cpp-rust.git
-cd etc-latam-project-cpp-rust.git
+git clone git@github.com:MateoOG/server-cpp-vs-rust.git
+cd server-cpp-vs-rust.git
 ```
 
 ### 2. Run the Full Comparison
